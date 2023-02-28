@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour, PlayerControls.IPlayerActions
     {
         rb = GetComponent<Rigidbody>();
         input = new PlayerControls();
-
     }
 
     private void Start()
