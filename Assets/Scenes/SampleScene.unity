@@ -905,6 +905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrierRed
       objectReference: {fileID: 0}
+    - target: {fileID: 5126632184568628965, guid: ac5bc47edec6e3e499526ff03423deac, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5507520143019482207, guid: ac5bc47edec6e3e499526ff03423deac, type: 3}
       propertyPath: m_RootOrder
       value: 12
