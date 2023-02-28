@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 99556572116610504, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 99556572116610504, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -760,20 +760,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
-      propertyPath: maxSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
-      propertyPath: acceleration
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
-      propertyPath: brakeMultiplier
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
+--- !u!1 &3345906356882313129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5126632184568628965, guid: ac5bc47edec6e3e499526ff03423deac, type: 3}
+  m_PrefabInstance: {fileID: 7587009382290639180}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3850560547084742269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3345906356882313129}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 1.312, z: 1.23}
+  m_Center: {x: 1.25, y: 0.656, z: 0.615}
 --- !u!1001 &3985540167166144799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,5 +949,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7075700399674677614, guid: ac5bc47edec6e3e499526ff03423deac, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ac5bc47edec6e3e499526ff03423deac, type: 3}
