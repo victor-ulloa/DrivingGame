@@ -603,14 +603,6 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -768,6 +760,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
+      propertyPath: maxSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149227299089, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
+      propertyPath: brakeMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bdc9f0b9fbc9324d992832d7a521f10, type: 3}
 --- !u!1001 &3985540167166144799
@@ -780,14 +784,6 @@ PrefabInstance:
     - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3514429313148771680, guid: 7c27ac2c257a8aa4ba834e96e47e8d3b, type: 3}
       propertyPath: m_LocalPosition.x
