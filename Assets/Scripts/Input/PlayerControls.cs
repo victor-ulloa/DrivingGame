@@ -24,72 +24,112 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""Keyobard"",
+            ""name"": ""Player"",
             ""id"": ""8acf6498-7538-4ab3-b3c8-ae33ea25b0ab"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""name"": ""Accelerate"",
+                    ""type"": ""Button"",
+                    ""id"": ""13b730e7-39e8-4031-bc93-633352ccd906"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Turn"",
                     ""type"": ""Value"",
-                    ""id"": ""519b7890-c153-4726-a378-7e4358933b5b"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""id"": ""d51d1a64-cbe1-401b-9341-7eeb4b099e3e"",
+                    ""expectedControlType"": ""Double"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Break"",
+                    ""type"": ""Button"",
+                    ""id"": ""6cc56a75-9e0a-44eb-bb56-badfff647720"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""a6fa07c3-2320-43ad-baf9-6dc82dfbe4e3"",
-                    ""path"": ""2DVector"",
+                    ""name"": """",
+                    ""id"": ""12bf3d66-648c-4591-9989-efed9761c65c"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Break"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Back/Forward"",
+                    ""id"": ""6ffa6d84-5a8d-4854-b532-a3d7557dd465"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Accelerate"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
-                    ""id"": ""17f515f8-8f86-424c-89c8-0ae1b2c2fdc2"",
+                    ""name"": ""negative"",
+                    ""id"": ""9e49c788-7bd1-4935-9d53-812f5cc76357"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
-                    ""id"": ""fddf4f3d-d4c5-4e82-82f5-07c484fbf407"",
+                    ""name"": ""positive"",
+                    ""id"": ""9592b001-57e4-4070-bc3c-a4155eae8a2c"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Accelerate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
-                    ""id"": ""7bb1c46a-41da-4d97-b548-aff6189ef074"",
+                    ""name"": ""Left/Right"",
+                    ""id"": ""375a1fcb-bbce-439b-9861-f9f0de27a3fd"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Turn"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""7e3892a6-ff29-4440-af51-5db7bc0d1327"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""13c33a24-cccd-42e2-9498-14efb196610c"",
+                    ""name"": ""positive"",
+                    ""id"": ""9a2b025f-745f-47f7-b5c5-ed498610bb68"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move"",
+                    ""action"": ""Turn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -98,9 +138,11 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // Keyobard
-        m_Keyobard = asset.FindActionMap("Keyobard", throwIfNotFound: true);
-        m_Keyobard_Move = m_Keyobard.FindAction("Move", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Accelerate = m_Player.FindAction("Accelerate", throwIfNotFound: true);
+        m_Player_Turn = m_Player.FindAction("Turn", throwIfNotFound: true);
+        m_Player_Break = m_Player.FindAction("Break", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -157,40 +199,58 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Keyobard
-    private readonly InputActionMap m_Keyobard;
-    private IKeyobardActions m_KeyobardActionsCallbackInterface;
-    private readonly InputAction m_Keyobard_Move;
-    public struct KeyobardActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private readonly InputAction m_Player_Accelerate;
+    private readonly InputAction m_Player_Turn;
+    private readonly InputAction m_Player_Break;
+    public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
-        public KeyobardActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Move => m_Wrapper.m_Keyobard_Move;
-        public InputActionMap Get() { return m_Wrapper.m_Keyobard; }
+        public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Accelerate => m_Wrapper.m_Player_Accelerate;
+        public InputAction @Turn => m_Wrapper.m_Player_Turn;
+        public InputAction @Break => m_Wrapper.m_Player_Break;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(KeyobardActions set) { return set.Get(); }
-        public void SetCallbacks(IKeyobardActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void SetCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_KeyobardActionsCallbackInterface != null)
+            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_KeyobardActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_KeyobardActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_KeyobardActionsCallbackInterface.OnMove;
+                @Accelerate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccelerate;
+                @Accelerate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccelerate;
+                @Accelerate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAccelerate;
+                @Turn.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Turn.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Turn.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTurn;
+                @Break.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreak;
+                @Break.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreak;
+                @Break.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnBreak;
             }
-            m_Wrapper.m_KeyobardActionsCallbackInterface = instance;
+            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
+                @Accelerate.started += instance.OnAccelerate;
+                @Accelerate.performed += instance.OnAccelerate;
+                @Accelerate.canceled += instance.OnAccelerate;
+                @Turn.started += instance.OnTurn;
+                @Turn.performed += instance.OnTurn;
+                @Turn.canceled += instance.OnTurn;
+                @Break.started += instance.OnBreak;
+                @Break.performed += instance.OnBreak;
+                @Break.canceled += instance.OnBreak;
             }
         }
     }
-    public KeyobardActions @Keyobard => new KeyobardActions(this);
-    public interface IKeyobardActions
+    public PlayerActions @Player => new PlayerActions(this);
+    public interface IPlayerActions
     {
-        void OnMove(InputAction.CallbackContext context);
+        void OnAccelerate(InputAction.CallbackContext context);
+        void OnTurn(InputAction.CallbackContext context);
+        void OnBreak(InputAction.CallbackContext context);
     }
 }
